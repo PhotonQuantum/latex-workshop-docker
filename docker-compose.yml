@@ -1,0 +1,13 @@
+version: "3"
+services:
+  code-server:
+    build: ./image
+    volumes:
+      - "./vscode_data/:/home/code/vscode_data"
+      - "./code_server/:/home/code/.config/code-server"
+    ports:
+      - "8080:9141"
+    environment:
+      - PASSWORD=test
+      - PORT=9141
+    restart: on-failure

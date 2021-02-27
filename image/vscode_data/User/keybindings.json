@@ -1,0 +1,7 @@
+[
+    {
+        "key": "shift+Enter",
+        "command": "extension.vim_escape",
+        "when": "editorTextFocus"
+    }
+]
