@@ -11,4 +11,5 @@ services:
     environment:
       - PASSWORD=test
       - PORT=9141
+      - DOMAIN=your-domain-here
     restart: on-failure

@@ -9,4 +9,4 @@ sudo chown -R coder:coder /home/coder
 
 cp -nr /etc/vscode_data/. /home/coder/vscode_data/
 
-dumb-init /usr/local/bin/code-server --user-data-dir /home/coder/vscode_data "$@"
+dumb-init /usr/local/bin/code-server --user-data-dir /home/coder/vscode_data --proxy-domain "$DOMAIN" "$@"
