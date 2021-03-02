@@ -67,7 +67,6 @@
                 "-interaction=nonstopmode",
                 "-file-line-error",
                 "-xelatex",
-                "-quiet",
                 "%DOCFILE%"
             ]
         },
@@ -134,7 +133,8 @@
         "-n30",
         "-e16",
         "-q",
-        "-n19"
+        "-n19",
+        "-n46"
     ],
     "files.autoSave": "afterDelay",
     "kite.showWelcomeNotificationOnStartup": false,
