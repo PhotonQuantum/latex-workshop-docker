@@ -1,9 +1,14 @@
 #!/bin/bash
+set -eu
 
-if [ ! -f "$HOME/.local/fixed.lock" ]; then
+echo "start workshop fix"
+
+if [ ! -f "$HOME/vscode_data/fixed.lock" ]; then
+
+echo "fixing workshop"
 
 # this should be the directory where all the extensions are installed
-EXT="$HOME/.local/share/code-server/extensions"
+EXT="$HOME/vscode_data/extensions"
 
 cd /tmp
 
@@ -17,7 +22,9 @@ ls $EXT | awk -F- '/latex-workshop/ {print $NF}' | while read VER; do
   
 done
 
-touch "$HOME/.local/fixed.lock"
+touch "$HOME/vscode_data/fixed.lock"
+
+echo "fix complete"
 
 fi
 
