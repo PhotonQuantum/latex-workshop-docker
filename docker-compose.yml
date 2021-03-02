@@ -3,8 +3,9 @@ services:
   code-server:
     build: ./image
     volumes:
-      - "./vscode_data/:/home/code/vscode_data"
-      - "./code_server/:/home/code/.config/code-server"
+      - "./vscode_data/:/home/coder/vscode_data"
+      - "./code_server/:/home/coder/.config/code-server"
+      - "./share:/home/coder/share"
     ports:
       - "8080:9141"
     environment:

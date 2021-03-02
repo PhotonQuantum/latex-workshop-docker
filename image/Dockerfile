@@ -18,7 +18,7 @@ ln -s /usr/local/lib/code-server-3.9.0/bin/code-server /usr/local/bin/code-serve
 RUN adduser --gecos '' --disabled-password coder && \
   echo "coder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/nopasswd
 
-RUN mkdir -p /home/coder/.config/code-server/data
+RUN mkdir -p /home/coder/.config/code-server/data /home/coder/share
 
 COPY vscode_data/ /etc/vscode_data
 
@@ -36,4 +36,4 @@ ENV USER=coder
 
 WORKDIR /home/coder
 
-ENTRYPOINT ["/usr/bin/entrypoint.sh", "--bind-addr", "0.0.0.0:8080", "."]
+ENTRYPOINT ["/usr/bin/entrypoint.sh", "--bind-addr", "0.0.0.0:8080", "./share"]
